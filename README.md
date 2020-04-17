@@ -19,4 +19,4 @@ Python : TODOアプリ作成
    `python manage.py runserver`
  - 実行に必要な環境
    - Python 3.6.*
-   - Django 2以上
+   - Django 2.2.*
