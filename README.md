@@ -15,6 +15,8 @@ Python : TODOアプリ作成
    `pip install -U Django==2.2.* django-debug-toolbar`
    - アプリのClone
    `git clone https://github.com/ryo-1123/python_training.git`
+   - アプリの立ち上げ
+   `python manage.py runserver`
  - 実行に必要な環境
-   - Python 3以上
+   - Python 3.6.*
    - Django 2以上
