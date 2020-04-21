@@ -8,12 +8,12 @@ class Target(models.Model):
         (1, '未着手'),
         (2, '進行中'),
         (3, '終了'),
-        )
+    )
     target_status = models.IntegerField(
         '学習ステータス',
         choices=STATUS,
         default=1,
-        )
+    )
     expectation_time = models.DurationField('予想時間')
     actual_time = models.DurationField('実際時間', null=True)
     LEVEL = (
@@ -27,7 +27,7 @@ class Target(models.Model):
         '理解度',
         choices=LEVEL,
         default=1,
-        )
+    )
     objective = models.ForeignKey(
         'objectivepage.Objective',
         on_delete=models.CASCADE
