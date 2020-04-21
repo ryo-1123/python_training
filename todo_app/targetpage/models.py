@@ -3,7 +3,7 @@ from django.db import models
 
 class Target(models.Model):
     target_name = models.CharField('行動目標名', max_length=255)
-    target_content = models.CharField('内容', max_length=255)
+    target_content = models.TextField('内容', max_length=1000, null=True)
     STATUS = (
         (1, '未着手'),
         (2, '進行中'),
