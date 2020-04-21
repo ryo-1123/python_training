@@ -40,3 +40,4 @@ class Target(models.Model):
         db_table = 'target'
         verbose_name = '行動目標名'
         verbose_name_plural = '行動目標名'
+        unique_together = ('target_name', 'objective')

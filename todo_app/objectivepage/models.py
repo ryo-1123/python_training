@@ -17,3 +17,4 @@ class Objective(models.Model):
         db_table = 'objective'
         verbose_name = '目標名'
         verbose_name_plural = '目標名'
+        unique_together = ('object_name', 'user')
