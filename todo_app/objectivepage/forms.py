@@ -8,4 +8,6 @@ class ObjectiveForm(forms.ModelForm):
         fields = [
             'object_name',
             'object_category',
+            'user',
         ]
+        widgets = {'user': forms.HiddenInput()}
