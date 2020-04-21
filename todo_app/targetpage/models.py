@@ -15,7 +15,7 @@ class Target(models.Model):
         default=1,
         )
     expectation_time = models.DurationField('予想時間')
-    actual_time = models.DurationField('実際時間')
+    actual_time = models.DurationField('実際時間', null=True)
     LEVEL = (
         (1, '全然'),
         (2, '何となく'),
