@@ -14,9 +14,20 @@ class Target(models.Model):
         choices=STATUS,
         default=1,
         )
-    expectation_time = models.IntegerField('予想時間')
+    expectation_time = models.DurationField('予想時間')
     actual_time = models.DurationField('実際時間')
-    understanding_level = models.DurationField('理解度')
+    LEVEL = (
+        (1, '全然'),
+        (2, '何となく'),
+        (3, '大体わかった'),
+        (4, '結構わかった'),
+        (5, '完璧'),
+    )
+    understanding_level = models.IntegerField(
+        '理解度',
+        choices=LEVEL,
+        default=1,
+        )
     objective = models.ForeignKey(
         'objectivepage.Objective',
         on_delete=models.CASCADE
