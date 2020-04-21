@@ -4,7 +4,16 @@ from django.db import models
 class Target(models.Model):
     target_name = models.CharField('行動目標名', max_length=255)
     target_content = models.CharField('内容', max_length=255)
-    target_status = models.IntegerField('学習ステータス')
+    STATUS = (
+        (1, '未着手'),
+        (2, '進行中'),
+        (3, '終了'),
+        )
+    target_status = models.IntegerField(
+        '学習ステータス',
+        choices=STATUS,
+        default=1,
+        )
     expectation_time = models.IntegerField('予想時間')
     actual_time = models.DurationField('実際時間')
     understanding_level = models.DurationField('理解度')
