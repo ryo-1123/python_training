@@ -9,7 +9,7 @@ def add_object(request):
         objective = Objective()
         objective.object_name = form.cleaned_data['object_name']
         objective.object_category = form.cleaned_data['object_category']
-        objective.user = request.user
+        objective.user = form.cleaned_data['user']
         objective.save()
         pass
         # ここにリダイレクト処理を追記する（トップへ）まだ、リダイレクト先が無いので未入力
