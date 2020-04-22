@@ -14,8 +14,17 @@ class Target(models.Model):
         choices=STATUS,
         default=1,
     )
-    expectation_time = models.DurationField('予想時間')
-    actual_time = models.DurationField('実際時間', null=True)
+    expectation_time = models.DecimalField(
+        '予想時間',
+        max_digits=4,
+        decimal_places=1,
+    )
+    actual_time = models.DecimalField(
+        '実際時間',
+        null=True,
+        max_digits=4,
+        decimal_places=1,
+    )
     LEVEL = (
         (1, '全然'),
         (2, '何となく'),
