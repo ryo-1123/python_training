@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 {% block title%}一覧表示{% endblock %}
 {% block content %}
-{% for object in objectives%}
+<!-- 目標 -->
+<h1>目標</h1>
+{% for object in objectives %}
 <p>{{object.object_name}}</p>
+{% endfor %}
+
+<!-- 行動目標 -->
+{% for key, target in targets.items %}
+    {{target}}
+    {% for item  in target %}
+    <p>{{item}}</p>
+    {% endfor %}
 {% endfor %}
 {% endblock%}
