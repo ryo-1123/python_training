@@ -13,7 +13,6 @@ def display_list(request):
         2: [],
         3: [],
     }
-
     for objective in objectives:
         for num in range(1, 4):
             target = Target.objects.filter(
