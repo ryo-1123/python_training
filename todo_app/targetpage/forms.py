@@ -14,6 +14,6 @@ class TargetForm(forms.ModelForm):
 
     def clean_expectation_time(self):
         expectation_time = self.cleaned_data.get('expectation_time')
-        if expectation_time < 0:
-            raise forms.ValidationError('正の数を入力してください。')
+        if expectation_time <= 0:
+            raise forms.ValidationError('0以上の数を入力してください。')
         return expectation_time
