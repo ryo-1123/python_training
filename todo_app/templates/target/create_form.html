@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title%}行動目標設定画面{% endblock %}
+{% block content %}
+<form action="{% url 'target:create_form' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    </p>
+    <input type="submit" value="この内容で登録する">
+</form>
+{% endblock %}
