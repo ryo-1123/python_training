@@ -8,20 +8,12 @@ def display_list(request):
         user=request.user
     )
 
-    targets = {
-        1: [],
-        2: [],
-        3: [],
-    }
-    for objective in objectives:
-        for num in range(1, 4):
-            target = Target.objects.filter(
-                target_status=num,
-                objective=objective,
-            )
-            if target:
-                targets[num].append(target)
-        
+    targets = {}
+    for num in range(1, 4):
+        targets[num] = Target.objects.filter(
+            target_status=num
+        )
+
     return render(request, 'listpage/index.html', {
         'objectives': objectives,
         'targets': targets,
