@@ -29,3 +29,11 @@ def edit_target(request, target_id):
         'form': form,
         'target': target,
     })
+
+
+def delete_target(request, target_id):
+    Target.objects.filter(
+        id=target_id,
+    ).delete()
+
+    return redirect('list:display_list')
