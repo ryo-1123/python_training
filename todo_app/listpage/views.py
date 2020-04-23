@@ -19,8 +19,7 @@ def display_list(request):
                 target_status=num,
                 objective=objective,
             )
-            if target:
-                targets[num] += target
+            targets[num] += list(target)
 
     print(targets)
     return render(request, 'listpage/index.html', {
