@@ -21,6 +21,15 @@ def display_list(request):
             ).order_by('id').reverse()
             targets[num] += list(target)
 
+    """
+    11~22行目のbetterな書き方
+
+    targets = defaultdict(list)
+    q_target = Target.objects.filter(objective__user=request.user).order_by('target_status')
+    for target in q_target:
+        targets[target.target_status].append(target)
+    """
+
     print(targets)
     return render(request, 'listpage/index.html', {
         'objectives': objectives,
