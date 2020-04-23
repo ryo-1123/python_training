@@ -20,6 +20,13 @@ class TargetForm(forms.ModelForm):
 
 
 class TargetEditForm(forms.ModelForm):
+    target_content = forms.CharField(
+        label='学習内容',
+        widget=forms.Textarea,
+        required=False,
+    )
+
+
     expectation_time = forms.DecimalField(
         label='完了予想時間',
         min_value=decimal.Decimal(0),
@@ -28,6 +35,7 @@ class TargetEditForm(forms.ModelForm):
     actual_time = forms.DecimalField(
         label='完了実際時間',
         min_value=decimal.Decimal(0),
+        required=False,
     )
 
     class Meta:
