@@ -6,7 +6,7 @@ from targetpage.models import Target
 def display_list(request):
     objectives = Objective.objects.filter(
         user=request.user
-    )
+    ).order_by('id').reverse()
 
     targets = {
         1: [],
@@ -18,7 +18,7 @@ def display_list(request):
             target = Target.objects.filter(
                 target_status=num,
                 objective=objective,
-            )
+            ).order_by('id').reverse()
             targets[num] += list(target)
 
     print(targets)
