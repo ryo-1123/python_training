@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}行動目標編集ページ{% endblock %}
+{% block content %}
+<form action="{% url 'target:edit_target' target.id %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="行動目標を更新する">
+</form>
+{% endblock %}
