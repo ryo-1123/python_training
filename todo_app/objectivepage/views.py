@@ -29,9 +29,9 @@ def edit_object(request, object_id):
     })
 
 
-def delete_object(request, object_id):
+def delete_object(request):
     Objective.objects.filter(
-        id=object_id,
+        id=request.POST.get('object_id'),
     ).delete()
 
     return redirect('list:display_list')
