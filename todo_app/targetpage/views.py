@@ -31,9 +31,9 @@ def edit_target(request, target_id):
     })
 
 
-def delete_target(request, target_id):
+def delete_target(request):
     Target.objects.filter(
-        id=target_id,
+        id=request.POST.get('target_id'),
     ).delete()
 
     return redirect('list:display_list')

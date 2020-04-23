@@ -12,5 +12,9 @@
     {{form.as_p}}
     <input type="submit" value="行動目標を更新する">
 </form>
-<a href="{% url 'target:delete_target' target.id %}">この行動目標を削除する</a>
+<form action="{% url 'target:delete_target' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="target_id" value="{{target.id}}">
+    <input type="submit" value="目標を削除する">
+</form>
 {% endblock %}
