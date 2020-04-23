@@ -6,6 +6,5 @@ app_name = 'objective'
 urlpatterns = [
     path('add_form/', views.add_object, name='add_form'),
     path('edit_form/<int:object_id>', views.edit_object, name='edit_object'),
-    path('delete/<int:object_id>', views.delete_object, name='delete_object'),
-
+    path('delete/', views.delete_object, name='delete_object'),
 ]
