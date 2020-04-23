@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
+
 {% block title%}一覧表示{% endblock %}
+
+{% block a_link %}
+<li><a href="{% url 'objective:add_form' %}" class="logout">目標を設定する</a></li>
+<li><a href="{% url 'target:create_form' %}" class="logout">行動目標を設定する</a></li>
+{% endblock %}
+
 {% block content %}
 <!-- 目標 -->
 <h1>目標</h1>

@@ -9,7 +9,7 @@ def create_target(request):
     print(form.errors)
     if form.is_valid():
         form.save()
-        # ここにリダイレクト処理を追記する（トップへ）まだ、リダイレクト先が無いので未入力
+        return redirect('list:display_list')
 
     return render(request, 'target/create_form.html',{
         'form': form,

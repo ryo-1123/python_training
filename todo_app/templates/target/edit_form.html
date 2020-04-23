@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+
 {% block title %}行動目標編集ページ{% endblock %}
+
+{% block a_link %}
+<li><a href="{% url 'list:display_list' %}" class="logout">一覧ページへ</a></li>
+{% endblock %}
+
 {% block content %}
 <form action="{% url 'target:edit_target' target.id %}" method="POST">
     {% csrf_token %}
