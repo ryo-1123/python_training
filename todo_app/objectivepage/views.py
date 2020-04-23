@@ -26,4 +26,5 @@ def edit_object(request, object_id):
         form = ObjectiveForm(instance=objective)
     return render(request, 'objective/edit_form.html',{
         'form': form,
+        'objective': objective,
     })
