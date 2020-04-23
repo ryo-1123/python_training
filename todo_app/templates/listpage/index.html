@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title%}一覧表示{% endblock %}
+{% block content %}
+<!-- 目標 -->
+<h1>目標</h1>
+{% for object in objectives %}
+<p>{{object.object_name}}</p>
+{% endfor %}
+<!-- 行動目標 -->
+{% for key, target in targets.items %}
+    <h3>
+        {% if key == 1 %}未着手
+        {% elif key == 2 %}進行中
+        {% elif key == 3 %}終了
+        {% endif %}
+    </h3>
+    {% for item  in target %}
+    <p>{{item}}</p>
+    {% endfor %}
+{% endfor %}
+{% endblock%}

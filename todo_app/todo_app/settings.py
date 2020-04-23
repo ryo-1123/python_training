@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'objectivepage.apps.ObjectivepageConfig',
     'targetpage.apps.TargetpageConfig',
     'accounts.apps.AccountsConfig',
+    'listpage.apps.ListpageConfig',
 ]
 
 MIDDLEWARE = [
