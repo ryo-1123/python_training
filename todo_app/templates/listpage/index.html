@@ -4,7 +4,7 @@
 <!-- 目標 -->
 <h1>目標</h1>
 {% for object in objectives %}
-<p>{{object.object_name}}</p>
+<a href="{% url 'objective:edit_object' object.id %}">{{object.object_name}}</a>
 {% endfor %}
 <!-- 行動目標 -->
 {% for key, target in targets.items %}
