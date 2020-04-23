@@ -27,3 +27,11 @@ def edit_object(request, object_id):
         'form': form,
         'objective': objective,
     })
+
+
+def delete_object(request, object_id):
+    Objective.objects.filter(
+        id=object_id,
+    ).delete()
+
+    return redirect('list:display_list')
