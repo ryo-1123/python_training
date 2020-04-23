@@ -2,6 +2,10 @@
 
 {% block title %}目標設定画面{% endblock %}
 
+{% block a_link %}
+<li><a href="{% url 'list:display_list' %}" class="logout">一覧ページへ</a></li>
+{% endblock %}
+
 {% block content %}
 <form action="{% url 'objective:add_form' %}" method="POST">
     {% csrf_token %}

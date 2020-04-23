@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+
 {% block title %}目標編集ページ{% endblock %}
+
+{% block a_link %}
+<li><a href="{% url 'list:display_list' %}" class="logout">一覧ページへ</a></li>
+{% endblock %}
+
 {% block content %}
 <form action="{% url 'objective:edit_object' objective.id %}" method="POST">
     {% csrf_token %}
