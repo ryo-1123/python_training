@@ -1,0 +1,31 @@
+name: Code Check PEP8
+
+on:
+  pull_request:
+
+jobs:
+  checker:
+    name: checke
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: install dependencies
+        run: python -m pip install --upgrade pip
+
+      - name: Cache pip
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
+      - name: Python Style Checker
+        uses: andymckay/pycodestyle-action@0.1.3
