@@ -1,6 +1,5 @@
 from django import forms
 from targetpage.models import Target
-from django.core.exceptions import ValidationError
 import decimal
 
 
@@ -25,7 +24,6 @@ class TargetEditForm(forms.ModelForm):
         widget=forms.Textarea,
         required=False,
     )
-
 
     expectation_time = forms.DecimalField(
         label='完了予想時間',

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from targetpage.models import Target
 from targetpage.forms import TargetForm, TargetEditForm
-from pprint import pprint
+
 
 # Create your views here.
 def create_target(request):
@@ -11,7 +11,7 @@ def create_target(request):
         form.save()
         return redirect('list:display_list')
 
-    return render(request, 'target/create_form.html',{
+    return render(request, 'target/create_form.html', {
         'form': form,
     })
 
@@ -25,7 +25,7 @@ def edit_target(request, target_id):
             return redirect('list:display_list')
     else:
         form = TargetEditForm(instance=target)
-    return render(request, 'target/edit_form.html',{
+    return render(request, 'target/edit_form.html', {
         'form': form,
         'target': target,
     })
